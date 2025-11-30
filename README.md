@@ -15,12 +15,14 @@ Simple Todo backend built with **FastAPI + SQLite** for the GrowEasy Full Stack 
 # create & activate venv (optional)
 python -m venv venv
 venv\Scripts\activate   # Windows
-
+```
+```bash
 # install deps
 pip install -r requirements.txt  # agar tumne banaya ho
 # ya manually:
 pip install fastapi uvicorn "python-jose[cryptography]" passlib[bcrypt] sqlalchemy pydantic[email]
-
+```
+```bash
 # run server
 uvicorn app.main:app --reload
 
@@ -40,7 +42,7 @@ Get logged-in user's profile
 
 Todo CRUD (create, list, update status) per user
 
-API Endpoints (examples)
+API Endpoints (examples) :
 Signup
 ```bash
 curl -X POST http://127.0.0.1:8000/auth/signup ^
