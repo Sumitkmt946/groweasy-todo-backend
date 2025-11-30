@@ -1,0 +1,43 @@
+# GrowEasy Todo API
+
+Simple Todo backend built with **FastAPI + SQLite** for the GrowEasy Full Stack assignment.
+
+## Tech Stack
+
+- FastAPI
+- SQLAlchemy + SQLite
+- JWT auth (access token)
+- Pydantic
+
+## Setup & Run
+
+```bash
+# create & activate venv (optional)
+python -m venv venv
+venv\Scripts\activate   # Windows
+
+# install deps
+pip install -r requirements.txt  # agar tumne banaya ho
+# ya manually:
+pip install fastapi uvicorn "python-jose[cryptography]" passlib[bcrypt] sqlalchemy pydantic[email]
+
+# run server
+uvicorn app.main:app --reload
+
+
+Server will run on http://127.0.0.1:8000
+
+Swagger docs: http://127.0.0.1:8000/docs
+
+Main Features
+
+User signup & login
+
+JWT-based auth
+
+Get logged-in user's profile
+
+Todo CRUD (create, list, update status) per user
+
+API Endpoints (examples)
+
