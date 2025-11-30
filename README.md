@@ -25,19 +25,4 @@ pip install fastapi uvicorn "python-jose[cryptography]" passlib[bcrypt] sqlalche
 uvicorn app.main:app --reload
 
 
-Server will run on http://127.0.0.1:8000
-
-Swagger docs: http://127.0.0.1:8000/docs
-
-Main Features
-
-User signup & login
-
-JWT-based auth
-
-Get logged-in user's profile
-
-Todo CRUD (create, list, update status) per user
-
-API Endpoints (examples)
 
