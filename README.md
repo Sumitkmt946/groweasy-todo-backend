@@ -1,21 +1,26 @@
-# GrowEasy Todo API
 
-Simple Todo backend built with **FastAPI + SQLite** for the GrowEasy Full Stack assignment.
+# ⚙️ GrowEasy Todo API — FastAPI
 
-## Tech Stack
+Backend for GrowEasy Todo App using **FastAPI + SQLAlchemy + JWT**.
 
+## 🚀 Tech Stack
 - FastAPI
-- SQLAlchemy + SQLite
-- JWT auth (access token)
-- Pydantic
+- SQLAlchemy
+- SQLite
+- JWT (python-jose)
+- Passlib (bcrypt)
 
-## Setup & Run
+## 📁 Structure
+app/ → main, auth, users, todos, models, schemas
+
+## ▶️ Setup & Run
 
 ```bash
 # create & activate venv (optional)
 python -m venv venv
 venv\Scripts\activate   # Windows
 ```
+
 ```bash
 # install deps
 pip install -r requirements.txt  # agar tumne banaya ho
@@ -43,19 +48,19 @@ Get logged-in user's profile
 Todo CRUD (create, list, update status) per user
 
 API Endpoints (examples) :
-###Signup
+Signup
 ```bash
 curl -X POST http://127.0.0.1:8000/auth/signup ^
   -H "Content-Type: application/json" ^
   -d "{\"name\": \"Sumit\", \"email\": \"sumit@example.com\", \"password\": \"password123\"}"
 ```
-###Login
+Login
 ```bash
 curl -X POST http://127.0.0.1:8000/auth/login ^
   -H "Content-Type: application/json" ^
   -d "{\"email\": \"sumit@example.com\", \"password\": \"password123\"}"
 ```
-###Sample response:
+Sample response:
 ```bash
 {
   "access_token": "JWT_TOKEN_HERE",
@@ -63,13 +68,13 @@ curl -X POST http://127.0.0.1:8000/auth/login ^
 }
 ```
 
-###Get Todos
+Get Todos
 ```bash
 curl -X GET http://127.0.0.1:8000/todos/ ^
   -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
-###Create Todo
+Create Todo
 ```bash
 curl -X POST http://127.0.0.1:8000/todos/ ^
   -H "Authorization: Bearer JWT_TOKEN_HERE" ^
