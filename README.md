@@ -24,13 +24,13 @@ pip install fastapi uvicorn "python-jose[cryptography]" passlib[bcrypt] sqlalche
 # run server
 uvicorn app.main:app --reload
 
-```bash
+```
 
 Server will run on http://127.0.0.1:8000
 
 Swagger docs: http://127.0.0.1:8000/docs
 
-Main Features
+## Main Features
 
 User signup & login
 
