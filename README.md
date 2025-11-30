@@ -41,6 +41,49 @@ Get logged-in user's profile
 Todo CRUD (create, list, update status) per user
 
 API Endpoints (examples)
+Signup
+```bash
+curl -X POST http://127.0.0.1:8000/auth/signup ^
+  -H "Content-Type: application/json" ^
+  -d "{\"name\": \"Sumit\", \"email\": \"sumit@example.com\", \"password\": \"password123\"}"
+```
+Login
+```bash
+curl -X POST http://127.0.0.1:8000/auth/login ^
+  -H "Content-Type: application/json" ^
+  -d "{\"email\": \"sumit@example.com\", \"password\": \"password123\"}"
+```
+Sample response:
+```bash
+{
+  "access_token": "JWT_TOKEN_HERE",
+  "token_type": "bearer"
+}
+```
+
+Get Todos
+```bash
+curl -X GET http://127.0.0.1:8000/todos/ ^
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Create Todo
+```bash
+curl -X POST http://127.0.0.1:8000/todos/ ^
+  -H "Authorization: Bearer JWT_TOKEN_HERE" ^
+  -H "Content-Type: application/json" ^
+  -d "{\"title\": \"First Todo\", \"description\": \"Finish GrowEasy assignment\"}"
+```
+
+Update Todo
+```bash
+curl -X PATCH http://127.0.0.1:8000/todos/1 ^
+  -H "Authorization: Bearer JWT_TOKEN_HERE" ^
+  -H "Content-Type: application/json" ^
+  -d "{\"completed\": true}"
+```
+
+
 
 
 
